@@ -33,6 +33,7 @@ body::-webkit-scrollbar {
 #nav .logo {
   width: 150px;
   margin-right: 5vw;
+  z-index: 900;
 }
 
 #nav .logo img {
@@ -41,6 +42,15 @@ body::-webkit-scrollbar {
 }
 #nav .logo img:hover {
   transform: translate(3px, 6px);
+}
+#nav button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  display: none;
+  color: #91b508;
+  cursor: pointer;
 }
 #nav ul {
   font-size: 1vw;
@@ -62,6 +72,7 @@ body::-webkit-scrollbar {
   color: #b8db2b;
   text-shadow: 0px 0px 11px rgba(0, 0, 0, 1);
 }
+
 .cursor-blur {
   height: 300px;
   width: 300px;
@@ -78,11 +89,37 @@ video {
   object-fit: cover;
   position: fixed;
 }
+.mobile-menu {
+  height: 100vh;
+  width: 100%;
+  display: none;
+  position: relative;
+  background: white;
+  z-index: 9;
+}
+
+.mobile-menu ul {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+.mobile-menu ul li {
+  list-style: none;
+  font-size: 40px;
+  padding: 15px 0;
+  border-bottom: 1px solid #91b508;
+}
+.mobile-menu ul li a {
+  color: #91b508;
+  text-decoration: none;
+}
 .menu-icon {
   position: relative;
   display: none;
   width: 100px;
   height: 100%;
+}
+.menu-icon .close-menu {
 }
 .menu-icon i {
   position: absolute;
@@ -100,6 +137,7 @@ video {
 .main .page1 {
   user-select: none;
   display: flex;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -468,11 +506,24 @@ video {
   margin: 20px;
 }
 @media screen and (max-width: 767px) {
+  video {
+  }
   .menu-icon {
     display: block;
   }
-  #nav ul li a {
+  #nav {
+    align-items: center;
+    justify-content: space-between;
+  }
+  #nav ul {
     display: none;
+  }
+
+  .main {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
   }
   .main .page1 {
     padding-top: 100px;
@@ -586,6 +637,7 @@ video {
     display: flex;
     flex-direction: column;
     padding: 0;
+    margin: 40px;
   }
   .food-drink-container .food-pic {
     height: 60%;
@@ -608,5 +660,31 @@ video {
   }
   .food-drink-container .food-content p {
     line-height: 25px;
+  }
+  .page4 p {
+    font-size: 25px;
+  }
+  .page4 #colon1 {
+    left: 20px;
+    top: 40px;
+  }
+  .page4 #colon2 {
+    right: 20px;
+    bottom: 40px;
+  }
+  .page5 .elem {
+    height: 80px;
+  }
+  .page5 .elem h1 {
+    font-size: 10px;
+  }
+  .footer > img {
+    z-index: 200;
+  }
+  .footer .logo {
+    z-index: 300;
+  }
+  .footer ul {
+    z-index: 300;
   }
 }
